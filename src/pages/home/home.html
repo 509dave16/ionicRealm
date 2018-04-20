@@ -7,8 +7,43 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider color="light">Create Person</ion-item-divider>
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input [(ngModel)]="testData.personName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Birthday</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="testData.personBirthday"></ion-datetime>
+      </ion-item>
+      <button (click)="onTestCreateAction()" ion-button block color="primary">
+        Create Person
+      </button>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light">Query All People</ion-item-divider>
+      <button (click)="onTestQueryingAction()" ion-button block color="primary">
+        Fetch People
+      </button>
+      <button (click)="onClearResultsAction()" ion-button block color="primary">
+        Clear Results
+      </button>
+      <ion-item>
+        <ion-label *ngIf="noResults">There are no People. Go create some!</ion-label>
+      </ion-item>
+      <ion-item *ngFor="let person of testData.people">
+        <div>Uuid: {{ person.uuid }}</div>
+        <div>Name: {{ person.name }}</div>
+        <div>Birthday: {{ person.birthday }}</div>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light">Delete All People</ion-item-divider>
+      <button (click)="onTestDeleteAction()" ion-button block color="primary">
+        Delete People
+      </button>
+    </ion-item-group>
+  </ion-list>
 </ion-content>

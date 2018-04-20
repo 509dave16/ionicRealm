@@ -1,0 +1,18 @@
+{
+  "schemas": [{
+    "name": "Person",
+    "primaryKey": "uuid",
+    "properties": {
+      "uuid": "string",
+      "name": { "type": "string", "indexed": true },
+      "birthday": { "type": "date", "optional": true },
+      "car": { "type": "Car" }
+    }
+  }, {
+    "name": "Car",
+    "properties": {
+      "make": "string",
+      "model": "string"
+    }
+  }]
+}

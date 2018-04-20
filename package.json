@@ -12,6 +12,7 @@
     "ionic:serve": "ionic-app-scripts serve"
   },
   "dependencies": {
+    "@airamrguez/cordova-plugin-realm": "file:local-plugins/cordova-plugin-realm",
     "@angular/animations": "5.2.9",
     "@angular/common": "5.2.9",
     "@angular/compiler": "5.2.9",
@@ -25,15 +26,36 @@
     "@ionic-native/splash-screen": "4.6.0",
     "@ionic-native/status-bar": "4.6.0",
     "@ionic/storage": "2.1.3",
+    "cordova-android": "6.3.0",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^1.2.0",
+    "cordova-plugin-realm": "local-plugins/cordova-plugin-realm",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-whitelist": "^1.3.3",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
     "rxjs": "5.5.8",
     "sw-toolbox": "3.6.0",
+    "uuid": "^3.2.1",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.9",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-realm": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
 }

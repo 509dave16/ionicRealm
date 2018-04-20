@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {RealmService} from "../services/realm.service";
+import {SharedModule} from "../modules/shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -22,6 +25,7 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   providers: [
+    RealmService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
